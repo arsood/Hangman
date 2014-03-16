@@ -54,13 +54,7 @@ var HANG = {
 			alert("Great guess!");
 			
 			if (countRemain > 0 && guessRemain > 0) {
-				var checkContinue = confirm("Do you want to guess again?");
-				
-				if (checkContinue) {
-					HANG.getGuess();
-				} else {
-					return;
-				}
+				this.getGuess();
 			} else if (countRemain > 0 && guessRemain === 0) {
 				alert("No more guesses! You lose! :(");
 			} else if (countRemain === 0 && guessRemain > 0) {
@@ -78,7 +72,7 @@ var HANG = {
 				
 				$("#guess-count").html(guessRemain); //CHANGE THIS
 				
-				$("#guessed-words").append("<myletter>" + myGuess + "</myletter>");
+				$("#guessed-words").append("<myletter>" + myGuess.toUpperCase() + "</myletter>");
 				
 				if (guessRemain === 0) {
 					alert("No more guesses! You lose! :(");
