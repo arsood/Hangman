@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+c {
+	padding:5px;
+	border-bottom:#00F 3px solid;
+	margin-right:10px;
+}
+
+#words {
+	padding:20px;
+	font-size:2.5em;
+	color:#FFF;
+	margin-top:17%;
+	text-align:center;
+}
+
+.word-active {
+	color:#000;
+}
+
+.guessed-words-container {
+	width:500px;
+	border:#000 2px solid;
+	margin-left:auto;
+	margin-right:auto;
+	padding:20px;
+	margin-top:30px;
+}
+
+#guessed-words {
+	overflow:hidden;
+}
+
+myletter {
+	float:left;
+	padding:15px;
+	font-size:2em;
+}
+
+#guess-count {
+	margin-top:10px;
+	font-size:2em;
+	text-align:center;
+}
+
