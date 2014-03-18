@@ -31,6 +31,11 @@ var HANG = {
 	getGuess: function() {
 		var myGuess = prompt("What letter do you guess?").toLowerCase();
 		
+		if (myGuess == "") {
+			alert("Enter something... Anything please!");
+			this.getGuess();
+		}
+		
 		var currentBlock = this.getBlock();
 		
 		//Loop through each letter and if there is a match change the color
@@ -70,7 +75,7 @@ var HANG = {
 				
 				guessRemain--;
 				
-				$("#guess-count").html(guessRemain); //CHANGE THIS
+				$("#hanger-holder img").attr("src", "img/" + guessRemain + ".PNG");
 				
 				$("#guessed-words").append("<myletter>" + myGuess.toUpperCase() + "</myletter>");
 				
@@ -78,7 +83,9 @@ var HANG = {
 					alert("No more guesses! You lose! :(");
 				} else {
 					alert("Sorry... You guessed wrong.");
-					this.getGuess();
+					setTimeout(function() {
+						HANG.getGuess();
+					}, 200);
 				}
 			}			
 		}
