@@ -1,10 +1,11 @@
+var mainBlock;
 var countRemain;
 var guessRemain;
 var guessed = new Array();
 
 var HANG = {
 	saveBlock: function(block) {
-		localStorage.setItem("main_block", block);
+		mainBlock = block;
 		
 		countRemain = this.getBlock().length;
 		guessRemain = 10;
@@ -21,11 +22,11 @@ var HANG = {
 	},
 	
 	getBlock: function() {
-		return localStorage.getItem("main_block").split(' ').join('').toLowerCase().split('');
+		return mainBlock.split(' ').join('').toLowerCase().split('');
 	},
 	
 	getWords: function() {
-		return localStorage.getItem("main_block").split(' ');
+		return mainBlock.split(' ');
 	},
 	
 	getGuess: function() {
@@ -64,7 +65,7 @@ var HANG = {
 				alert("No more guesses! You lose! :(");
 				return false;
 			} else if (countRemain === 0 && guessRemain > 0) {
-				alert("You win! It was " + localStorage.getItem("main_block"));
+				alert("You win! It was " + mainBlock);
 				return false;
 			}
 			
