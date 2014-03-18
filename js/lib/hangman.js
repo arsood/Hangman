@@ -62,8 +62,10 @@ var HANG = {
 				this.getGuess();
 			} else if (countRemain > 0 && guessRemain === 0) {
 				alert("No more guesses! You lose! :(");
+				return false;
 			} else if (countRemain === 0 && guessRemain > 0) {
 				alert("You win! It was " + localStorage.getItem("main_block"));
+				return false;
 			}
 			
 		} else {
@@ -81,6 +83,7 @@ var HANG = {
 				
 				if (guessRemain === 0) {
 					alert("No more guesses! You lose! :(");
+					return false;
 				} else {
 					alert("Sorry... You guessed wrong.");
 					setTimeout(function() {
